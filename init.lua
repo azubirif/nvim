@@ -4,13 +4,6 @@ vim.g.maplocalleader = ' '
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.cmd [[
-  hi Normal guibg=NONE ctermbg=NONE
-  hi NormalNC guibg=NONE ctermbg=NONE
-  hi SignColumn guibg=NONE ctermbg=NONE
-  hi EndOfBuffer guibg=NONE ctermbg=NONE
-  hi NormalFloat guibg=NONE ctermbg=NONE
-]]
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 vim.o.number = true
@@ -18,7 +11,7 @@ vim.o.mouse = 'a'
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 
-vim.o.showmode = false
+vim.o.showmode = true
 vim.opt.tabstop = 4
 
 vim.schedule(function()
@@ -577,6 +570,7 @@ require('lazy').setup({
         ts_ls = {},
         zls = {},
         vtsls = {},
+        tinymist = {},
         astro = {},
         lua_ls = {
           -- cmd = { ... },
@@ -963,6 +957,10 @@ require('lazy').setup({
     end,
   },
   {
+    'tpope/vim-surround',
+    lazy = true,
+  },
+  {
     'lervag/vimtex',
     lazy = false, -- we don't want to lazy load VimTeX
     -- tag = "v2.15", -- uncomment to pin to a specific release
@@ -971,19 +969,19 @@ require('lazy').setup({
       vim.g.vimtex_view_general_viewer = 'okular'
     end,
   },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup {
-        options = {
-          theme = 'catppuccin',
-          -- theme = 'gruvbox',
-          -- ... the rest of our lualine config
-        },
-      }
-    end,
-  },
+  -- {
+  --   'nvim-lualine/lualine.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   config = function()
+  --     require('lualine').setup {
+  --       options = {
+  --         theme = 'catppuccin',
+  --         -- theme = 'gruvbox',
+  --         -- ... the rest of our lualine config
+  --       },
+  --     }
+  --   end,
+  -- },
   require 'kickstart.plugins.autopairs',
 }, {
   ui = {

@@ -228,12 +228,6 @@ local snips = {
     t { '', '\\end{figure}' },
   }),
 
-  s('abs', {
-    t { '\\begin{abstract}', '\t' },
-    i(0),
-    t { '', '.\\end{abstract}' },
-  }),
-
   s('tab', {
     t '\\begin{',
     i(1, 'tabular'),
@@ -473,6 +467,31 @@ local snips = {
     i(1),
     t '}{',
     i(2),
+    t '}',
+    i(0),
+  }),
+
+  s('dv', {
+    t '\\dv{',
+    i(1),
+    t '}{',
+    i(2),
+    t '}',
+    i(0),
+  }),
+
+  s('pdv', {
+    t '\\pdv{',
+    i(1),
+    t '}{',
+    i(2),
+    t '}',
+    i(0),
+  }),
+
+  s('abs', {
+    t '\\abs{',
+    i(1),
     t '}',
     i(0),
   }),
