@@ -11,7 +11,7 @@ vim.o.mouse = 'a'
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 
-vim.o.showmode = true
+vim.o.showmode = false
 vim.opt.tabstop = 4
 
 vim.schedule(function()
@@ -969,19 +969,27 @@ require('lazy').setup({
       vim.g.vimtex_view_general_viewer = 'okular'
     end,
   },
-  -- {
-  --   'nvim-lualine/lualine.nvim',
-  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  --   config = function()
-  --     require('lualine').setup {
-  --       options = {
-  --         theme = 'catppuccin',
-  --         -- theme = 'gruvbox',
-  --         -- ... the rest of our lualine config
-  --       },
-  --     }
-  --   end,
-  -- },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        sections = {
+          lualine_a = { '[[  ]]', 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = { 'filename' },
+          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' },
+        },
+        options = {
+          theme = 'catppuccin',
+          -- theme = 'gruvbox',
+          -- ... the rest of our lualine config
+        },
+      }
+    end,
+  },
   require 'kickstart.plugins.autopairs',
 }, {
   ui = {
