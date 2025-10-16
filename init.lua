@@ -838,14 +838,14 @@ require('lazy').setup({
         -- optional configuration here
         transparent = true,
       }
-      vim.cmd 'colorscheme vague'
+      -- vim.cmd 'colorscheme vague'
     end,
   },
   {
     'morhetz/gruvbox',
     priority = 1000,
     config = function()
-      -- vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
   {
@@ -966,7 +966,7 @@ require('lazy').setup({
     -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
       -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_general_viewer = 'okular'
+      vim.g.vimtex_view_general_viewer = 'evince'
     end,
   },
   {
@@ -983,7 +983,7 @@ require('lazy').setup({
           lualine_z = { 'location' },
         },
         options = {
-          theme = 'catppuccin',
+          theme = 'gruvbox_dark',
           -- theme = 'gruvbox',
           -- ... the rest of our lualine config
         },

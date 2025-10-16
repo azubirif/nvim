@@ -354,6 +354,7 @@ local snips = {
   s('>>', { t '\\mapsto' }),
 
   s('RR', { t '\\mathbb{R}' }),
+  s('CC', { t '\\mathbb{C}' }),
 
   s('set', {
     t '\\{ ',
@@ -401,13 +402,13 @@ local snips = {
 
   s('tp', {
     t '^{',
-    i(0),
+    i(1),
     t '}',
   }),
 
   s('_', {
     t '_{',
-    i(0),
+    i(1),
     t '}',
   }),
 
