@@ -136,6 +136,21 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+-- LSP autoconnection
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'gdscript',
+  callback = function()
+    local root = vim.fs.dirname(vim.fs.find({ 'project.godot' }, { upward = true })[1])
+    if root then
+      vim.lsp.start {
+        name = 'godot',
+        cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+        root_dir = root,
+      }
+    end
+  end,
+})
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -569,6 +584,7 @@ require('lazy').setup({
         rust_analyzer = {},
         ts_ls = {},
         zls = {},
+        ols = {},
         vtsls = {},
         tinymist = {},
         astro = {},
@@ -898,6 +914,9 @@ require('lazy').setup({
         'vimdoc',
         'zig',
         'typescript',
+        'gdscript',
+        'godot_resource',
+        'gdshader',
         -- 'eslint-lsp',
         -- 'prettierd',
       },
@@ -968,6 +987,9 @@ require('lazy').setup({
       -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_view_general_viewer = 'evince'
     end,
+  },
+  {
+    'habamax/vim-godot',
   },
   {
     'nvim-lualine/lualine.nvim',
