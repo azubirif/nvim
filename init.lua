@@ -684,6 +684,7 @@ require('lazy').setup({
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         tex = { 'tex-fmt' },
+        typst = { 'typstfmt' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -985,7 +986,7 @@ require('lazy').setup({
     -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
       -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_general_viewer = 'evince'
+      vim.g.vimtex_view_general_viewer = 'zathura'
     end,
   },
   {
