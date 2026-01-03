@@ -140,6 +140,10 @@ rtp:prepend(lazypath)
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'gdscript',
   callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.expandtab = false
     local root = vim.fs.dirname(vim.fs.find({ 'project.godot' }, { upward = true })[1])
     if root then
       vim.lsp.start {
@@ -685,6 +689,8 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         tex = { 'tex-fmt' },
         typst = { 'typstfmt' },
+        gdscript = { 'gdformat' },
+        markdown = { 'prettier' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
