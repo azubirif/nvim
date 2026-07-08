@@ -999,6 +999,7 @@ require('lazy').setup({
   {
     'habamax/vim-godot',
   },
+  { 'andweeb/presence.nvim' },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
