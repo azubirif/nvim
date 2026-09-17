@@ -867,15 +867,21 @@ require('lazy').setup({
   {
     'morhetz/gruvbox',
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'gruvbox'
-    end,
+    -- config = function()
+    --   vim.cmd.colorscheme 'gruvbox'
+    -- end,
   },
   {
     'nordtheme/nord',
     priority = 1000,
     config = function()
       -- vim.cmd.colorscheme 'nord'
+    end,
+  },
+  {
+    'sainnhe/everforest',
+    config = function()
+      vim.cmd.colorscheme 'everforest'
     end,
   },
 
@@ -905,7 +911,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     branch = 'main',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.config', -- Sets main module to use for opts
+    -- main = 'nvim-treesitter.config', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
@@ -1000,29 +1006,29 @@ require('lazy').setup({
     'habamax/vim-godot',
   },
   { 'andweeb/presence.nvim' },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup {
-        sections = {
-          lualine_a = { '[[  ]]', 'mode' },
-          lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename' },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' },
-        },
-        options = {
-          theme = 'gruvbox_dark',
-          -- theme = 'gruvbox',
-          -- ... the rest of our lualine config
-        },
-      }
-    end,
-  },
-  require 'kickstart.plugins.autopairs',
-}, {
+  -- {
+  --   'nvim-lualine/lualine.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   config = function()
+  --     require('lualine').setup {
+  --       sections = {
+  --         lualine_a = { 'mode' },
+  --         lualine_b = { 'branch', 'diff', 'diagnostics' },
+  --         lualine_c = { 'filename' },
+  --         lualine_x = { 'encoding', 'fileformat', 'filetype' },
+  --         lualine_y = { 'progress' },
+  --         lualine_z = { 'location' },
+  --       },
+  --       options = {
+  --         theme = 'base16',
+  --         -- theme = 'gruvbox',
+  --         -- ... the rest of our lualine config
+  --       },
+  --     }
+  --   end,
+  -- },
+  -- require 'kickstart.plugins.autopairs',
+-- }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
