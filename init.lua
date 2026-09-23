@@ -173,7 +173,7 @@ vim.api.nvim_create_autocmd('FileType', {
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require('lazy').setup({
+require('lazy').setup {
   { import = 'custom.plugins' },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -1034,8 +1034,8 @@ require('lazy').setup({
   --     }
   --   end,
   -- },
-  -- require 'kickstart.plugins.autopairs',
--- }, {
+  require 'kickstart.plugins.autopairs',
+  -- }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -1055,7 +1055,7 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-})
+}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
