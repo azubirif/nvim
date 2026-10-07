@@ -871,27 +871,6 @@ require('lazy').setup {
       -- vim.cmd 'colorscheme vague'
     end,
   },
-  {
-    'morhetz/gruvbox',
-    priority = 1000,
-    -- config = function()
-    --   vim.cmd.colorscheme 'gruvbox'
-    -- end,
-  },
-  {
-    'nordtheme/nord',
-    priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme 'nord'
-    end,
-  },
-  {
-    'sainnhe/everforest',
-    config = function()
-      vim.cmd.colorscheme 'everforest'
-    end,
-  },
-
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
